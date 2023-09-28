@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">LISTA DE MATRICULAS</span>
+                    <button class="btn btn-success float-end" routerLink="/crear-matricula">NUEVO</button>
+                    <table *ngIf="listMatriculas.length > 0" class="table table-striped mt-3">
+                        <thead>
+                          <tr>
+                            <th scope="col">Codigo</th>
+                            <th scope="col">Código alumno</th>
+                            <th scope="col">Nombre curso</th>
+                            <th scope="col">Código profesor</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let matricula of listMatriculas ">
+                            <td>{{matricula.codigo}}</td>
+                            <td>{{matricula.idAlumno}}</td>
+                            <td>{{matricula.idCurso}}</td>
+                            <td>{{matricula.idProfesor}}</td>
+                            <td>
+                                <i [routerLink]="['/editar-matricula', matricula._id]" class="fa-solid fa-pen-to-square text-primary"></i>
+                                <i (click)="eliminarMatricula(matricula._id)" class="fa-solid fa-trash text-danger"></i>
+                            </td>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <h5 style="text-align: start; margin-top: 10px" *ngIf="listMatriculas.length == 0">No hay registro de alumnos</h5>
+                </div>
+            </div>
+        </div>
+</div>

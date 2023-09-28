@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">LISTA DE ALUMNOS</span>
+                    <button class="btn btn-success float-end" routerLink="/crear-alumno">NUEVO</button>
+                    <table *ngIf="listAlumnos.length > 0" class="table table-striped mt-3">
+                        <thead>
+                          <tr>
+                            <th scope="col">Codigo</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Grado de Estudios</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let alumno of listAlumnos ">
+                            <td>{{alumno.codigo}}</td>
+                            <td>{{alumno.nombre}}</td>
+                            <td>{{alumno.apellido}}</td>
+                            <td>{{alumno.correo}}</td>
+                            <td>{{alumno.edad}}</td>
+                            <td>{{alumno.gradoEstudios}}</td>
+                            <td>
+                                <i [routerLink]="['/editar-alumno', alumno._id]" class="fa-solid fa-pen-to-square text-primary"></i>
+                                <i (click)="eliminarAlumno(alumno._id)" class="fa-solid fa-trash text-danger"></i>
+                            </td>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <h5 style="text-align: start; margin-top: 10px" *ngIf="listAlumnos.length == 0">No hay registro de alumnos</h5>
+                </div>
+            </div>
+        </div>
+</div>

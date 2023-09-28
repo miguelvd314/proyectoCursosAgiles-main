@@ -1,0 +1,37 @@
+###
+POST http://localhost:9000/api/cursos HTTP/1.1
+Content-Type: application/json
+
+{
+    "codigo": "C006",
+    "nombre": "Curso",
+    "fechaIni": "02/01/2023",
+    "fechaFin": "30/04/2023",
+    "dia": "Sábado",
+    "hora": "18:00 - 22:00"
+}
+
+### 
+GET http://localhost:9000/api/cursos HTTP/1.1
+
+//despues del user poner el id con la lectura de arriba
+###
+GET http://localhost:9000/api/cursos/63890f5aac0d8ed0e44cdff2 HTTP/1.1
+
+//tambien le pasamos el id
+###
+PUT http://localhost:9000/api/cursos/63890f5aac0d8ed0e44cdff2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "codigo": "C007",
+    "nombre": "Curso",
+    "fechaIni": "02/01/2023",
+    "fechaFin": "30/04/2023",
+    "dia": "Sábado",
+    "hora": "18:00 - 22:00"
+}
+
+//SE LE PASA EL ID
+###
+DELETE  http://localhost:9000/api/cursos/63890f5aac0d8ed0e44cdff2 HTTP/1.1

@@ -1,0 +1,37 @@
+###
+POST http://localhost:8000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "codigo": "15975365",
+    "nombre": "Angel",
+    "apellido": "Dueñas",
+    "correo": "angeldueñas@unmsm.edu.pe",
+    "edad": "21",
+    "gradoEstudios": "EBR"
+}
+
+### 
+GET http://localhost:8000/api/users HTTP/1.1
+
+//despues del user poner el id con la lectura de arriba
+###
+GET http://localhost:8000/api/users/638a3f156920a6745baa6849 HTTP/1.1
+
+//tambien le pasamos el id
+###
+PUT http://localhost:8000/api/users/638a488cf163db853b634b41 HTTP/1.1
+Content-Type: application/json
+
+{
+    "codigo": "15975365",
+    "nombre": "Angel",
+    "apellido": "Dueñas",
+    "correo": "angeldueñas@unmsm.edu.pe",
+    "edad": "20",
+    "gradoEstudios": "EBR"
+}
+
+//SE LE PASA EL ID
+###
+DELETE  http://localhost:8000/api/users/643584273641fc5336739c52 HTTP/1.1

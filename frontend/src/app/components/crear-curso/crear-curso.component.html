@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-5 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">{{titulo | uppercase}}</span>
+                    <form class="mt-4" [formGroup]="cursoForm" (ngSubmit)="agregarCurso()">
+                        <div class="mb-3">
+                            <input type="text" formControlName="codigo" class="form-control form-control-lg" placeholder="Codigo">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="nombre" class="form-control form-control-lg" placeholder="Nombre">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="fechaIni" class="form-control form-control-lg" placeholder="Fecha de Inicio">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="fechaFin" class="form-control form-control-lg" placeholder="Fecha de Fin">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="dia" class="form-control form-control-lg" placeholder="Día">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="hora" class="form-control form-control-lg" placeholder="Hora">
+                        </div>
+                        <div class="mb=3">
+                            <button routerLink="/curso" class="btn btn-secondary btn-lg float-start">ATRAS</button>
+                            <button type="submit" [disabled]="cursoForm.invalid" class="btn btn-success btn-lg float-end">ACEPTAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>

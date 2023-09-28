@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">LISTA DE CURSOS</span>
+                    <button class="btn btn-success float-end" routerLink="/crear-curso">NUEVO</button>
+                    <table *ngIf="listCursos.length > 0" class="table table-striped mt-3">
+                        <thead>
+                          <tr>
+                            <th scope="col">Codigo</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Fecha Inicio</th>
+                            <th scope="col">Fecha Fin</th>
+                            <th scope="col">Día</th>
+                            <th scope="col">Hora</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let curso of listCursos ">
+                            <td>{{curso.codigo}}</td>
+                            <td>{{curso.nombre}}</td>
+                            <td>{{curso.fechaIni}}</td>
+                            <td>{{curso.fechaFin}}</td>
+                            <td>{{curso.dia}}</td>
+                            <td>{{curso.hora}}</td>
+                            <td>
+                                <i [routerLink]="['/editar-curso', curso._id]" class="fa-solid fa-pen-to-square text-primary"></i>
+                                <i (click)="eliminarCurso(curso._id)" class="fa-solid fa-trash text-danger"></i>
+                            </td>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <h5 style="text-align: start; margin-top: 10px" *ngIf="listCursos.length == 0">No hay registro de alumnos</h5>
+                </div>
+            </div>
+        </div>
+</div>

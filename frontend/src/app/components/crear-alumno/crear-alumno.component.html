@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-5 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">{{titulo | uppercase}}</span>
+                    <form class="mt-4" [formGroup]="alumnoForm" (ngSubmit)="agregarAlumno()">
+                        <div class="mb-3">
+                            <input type="text" formControlName="codigo" class="form-control form-control-lg" placeholder="Codigo">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="nombre" class="form-control form-control-lg" placeholder="Nombre">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="apellido" class="form-control form-control-lg" placeholder="Apellido">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="correo" class="form-control form-control-lg" placeholder="Correo">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="edad" class="form-control form-control-lg" placeholder="Edad">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="gradoEstudios" class="form-control form-control-lg" placeholder="Grado de Estudio">
+                        </div>
+                        <div class="mb=3">
+                            <button routerLink="/alumno" class="btn btn-secondary btn-lg float-start">ATRAS</button>
+                            <button type="submit" [disabled]="alumnoForm.invalid" class="btn btn-success btn-lg float-end">ACEPTAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
